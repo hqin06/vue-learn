@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .todo{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <ul>
+            <li v-for="task in tasks" :class="[{todo:task.todo},'somth']">{{task.content}}</li>
+            <!-- <li v-for="task in tasks" :class="{todo:task.todo}">{{task.content}}</li> -->
+            <!-- <li v-for="task in tasks" :class="task.todo?'todo':''">{{task.content}}</li> -->
+        </ul>
+    </div>
+
+</body>
+
+<script src="./vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            tasks: [
+                { content: 'onesidsdsu djisdun', todo: true },
+                { content: '号啦啦啦低等级，第几集', todo: true },
+                { content: 'onesidsdsu 大开杀戒', todo: false },
+                { content: 'onesidsdsu uehndkjds', todo: true },
+            ]
+        }
+    })
+</script>
+
+</html>

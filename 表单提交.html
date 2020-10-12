@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- <form action="demo.html" v-on:submit.prevent='submitForm'> -->
+            <button type="submit" @click='count +=2'>submit{{count}}</button>
+            <!-- <button type="submit" @click='updateCount'>submit{{count}}</button> -->
+        <!-- </form> -->
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            count: 0
+        },
+        methods: {
+            submitForm: function () {
+                this.count += 1
+                // alert('Submit')
+            },
+            updateCount: function () {
+                this.count += 1
+                // alert('Submit')
+            }
+        }
+    })
+</script>
+
+</html>
