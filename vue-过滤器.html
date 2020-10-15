@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            background: blue;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#box',
+                data: {
+                },
+                filters:{//自定义过滤
+                    getData(d){
+                        return d+200;
+                        // return '$'+d+'.00'
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <!-- 小写变大写 -->
+        {{'welcome'|uppercase}}
+        <br>
+        <!-- 大写变小写 -->
+        {{'WELCOME'|lowercase}}
+        <br />
+        <!-- 变小写，首字母大写 -->
+        {{'WELCOME'|lowercase|capitalize}}
+        <br />
+        <!-- 货币 -->
+        {{12|currency}}
+
+        <!--通过管道调用getData方法,自定义过滤器一定不能在这里加括号-->
+        {{12|getData}}
+    </div>
+</body>
+
+</html>
